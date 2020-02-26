@@ -73,7 +73,9 @@ const reducer = (state, action) => {
             const tableData = [...state.tableData];
             tableData[action.row] = [...state.tableData[action.row]];
             tableData[action.row][action.cell] = CODE.OPENED;
+            const checkAround = (row, cell)=>{
 
+            }
             let around = [];
             if(tableData[action.row-1]){
                 around = around.concat(
@@ -93,10 +95,8 @@ const reducer = (state, action) => {
                     tableData[action.row+1][action.cell+1],
                 )
             }
-            console.log(around)
             const count = around.filter((v)=> { return [CODE.MINE, CODE.FLAG_MINE, CODE.QUESTION_MINE].includes(v)}).length;
             tableData[action.row][action.cell] = count;
-            console.log(count)
             return {
                 ...state,
                 tableData
