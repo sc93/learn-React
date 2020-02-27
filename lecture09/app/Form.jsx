@@ -1,6 +1,6 @@
-import React, { useState, useCallback, useContext } from 'react';
+import React, { useState, useCallback, useContext, memo } from 'react';
 import {TableContext, START_GAME} from './MineSearch'
-const Form = () => {
+const Form = memo(() => {
     const [row,setRow] = useState(10);
     const [cell,setCell] = useState(10);
     const [mine,setMine] = useState(20);
@@ -22,14 +22,14 @@ const Form = () => {
     return (
         <>
             <div>
-                <input type="number" placeholder="세로" value="row" onChange={onChangeRow}/>
-                <input type="number" placeholder="가로" value="cell" onChange={onChangeCell}/>
-                <input type="number" placeholder="지뢰개수" value="mine" onChange={onChangeMine}/> 
+                <input type="number" placeholder="세로" value={row} onChange={onChangeRow}/>
+                <input type="number" placeholder="가로" value={cell} onChange={onChangeCell}/>
+                <input type="number" placeholder="지뢰개수" value={mine} onChange={onChangeMine}/> 
                 <button onClick={onCLickBtn}>생성</button>
             </div>
         </>
     )
 
-}
+});
 export default Form;
 
