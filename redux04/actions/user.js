@@ -5,7 +5,7 @@ const login = (data) => {
             setTimeout(() => {
                 dispatch(loginSuccess({
                     userId: 1,
-                    nickname: 'zerocho'
+                    nickname: 'shin'
                 }))
             }, 2000);
         } catch (error) {
