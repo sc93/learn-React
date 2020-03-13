@@ -12,7 +12,6 @@ const userReducer = (prevState = initialState, action) => {
                 draft.data = null;
                 break;
             case 'LOGIN_SUCCESS':
-                console.log('LOGIN_SUCCESS : ',action.data)
                 draft.isLoggingIn = false;
                 draft.data = action.data;
                 break;
